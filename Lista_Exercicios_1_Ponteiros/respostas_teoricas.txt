@@ -1,0 +1,31 @@
+1. Qual das seguintes afirmações sobre ponteiros em C é VERDADEIRA? 
+b) Um ponteiro armazena o endereço de memória de uma variável. 
+
+2. O que o operador * (asterisco) faz quando usado na frente de uma variável do 
+tipo ponteiro que já foi inicializada? 
+d) Acessa (dereferencia) o valor armazenado no endereço de memória para o qual 
+o ponteiro aponta. 
+
+3. Para que serve a função malloc() da biblioteca <stdlib.h>? 
+c) Para alocar um bloco de memória de um tamanho especificado em bytes e 
+retornar um ponteiro para o início desse bloco. 
+ 
+4. Considere a função void modifica(int *a, int b) que altera o valor da variável para 
+a qual a aponta. Como seria a chamada correta desta função na main para 
+modificar uma variável int num = 5;?
+
+    #include <stdio.h>
+    
+    //Função para modificar o valor apontado por *a para o valor de b
+    void modifica(int *a, int b) {
+        *a = b;  
+    }
+
+    int main() {
+        int x = 5;
+        //&x passa o endereço de x e o novo valor "b"
+        modifica(&x, 10); 
+        //Saída do valor apontado por *a modificado
+        printf("Valor alterado: %d\n", x);  
+        return 0;
+    }
