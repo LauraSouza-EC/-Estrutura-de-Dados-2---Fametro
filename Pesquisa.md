@@ -3,8 +3,8 @@
 
 - CONCEITOS: Tabela Hash é uma estrutura de dados que associa chaves a valores de forma extremamente rápida, utiliza uma função hash (é um algoritmo que transforma uma entrada de dados de qualquer tamanho em uma saída de comprimento fixo, chamada de valor hash ou resumo hash. Essa saída é uma sequência de caracteres alfanuméricos, única para cada entrada, e usada principalmente para verificar a integridade de arquivos e garantir a segurança digital) para transformar a chave (string, número etc.) em um índice da tabela. Objetivo principal é buscar, inserir e remover dados em tempo eficiente, geralmente O(1) médio.
     Pode usar tratamento de colisões, porque diferentes chaves podem gerar o mesmo índice, soluções comuns se houver colisão:
-        -> encadeamento (Chaining): inserir na lista
-        -> endereçamento aberto (Open Addressing): procurar nova posição
+        -> encadeamento (Chaining): inserir na lista, é um método para resolver colisões, onde cada "slot" da tabela contém uma lista encadeada para armazenar todos os pares chave-valor que mapeiam para o mesmo índice. vetor de listas encadeadas, perde performance.
+        -> endereçamento aberto (Open Addressing): procurar nova posição. Quando uma colisão ocorre (duas chaves mapeiam para o mesmo índice), o algoritmo sonda a tabela procurando por outra posição vazia usando métodos como a sondagem linear (verificando slots sequenciais) ou sondagem quadrática (eleva o índice ao quadrado, espaçamento melhor). Hash duplo
 
 - FUNCIONAMENTO: Ao fazer uma entrada de dado, é atribuído um "identificador" a ela por meio da função hash, que funciona como um índice de uma tabela onde essa entrada será armazenada, com ele é possível realizar buscas, também fazer inserções e remoções de dados de modo mais ágil.
 
@@ -72,6 +72,12 @@ int main() {
 4)
 5)
 <ARVORES BINARIA DE PESQUISA (Binary Search Trees – BST)>
+uma arvore grafao não direcionado, conexo e aciclico, estrutura recursiva(sub-árvores)
+raiz ponto de origem
+nó/vértice tem um ou mais filhos
+folha/nó terminal não tem filho
+nível ditância entre o nó e a raiz
+altura é o maior nível (profundidade, total de níveis)
 
 - CONCEITOS: Árvore binária é uma estrutura de dados em forma de árvore onde cada nó tem até dois filhos (esquerda e direita), todos os valores menores que o valor de um nó ficam no subárvore esquerda, todos os valores maiores ficam no subárvore direita, esse arranjo possibilita buscas rápidas, geralmente O(log n) em árvores balanceadas, é usada para organizar, inserir e buscar dados de forma eficiente.
 
